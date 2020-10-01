@@ -1,0 +1,129 @@
+:root {
+    --dark-color:#77105d75;
+    --medium-color: #68445a70;
+    --light-color: rgba(85, 182, 47, 0.425);
+    --text-color: rgba(111, 209, 72, 0.918);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to bottom right, var(--medium-color), var(--light-color)), 
+    url('../img/landscape.jpg');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0%, 100% 75%, 0% 100%); /* https://bennettfeely.com/clippy/ */
+}
+
+.logo-box {
+    position: absolute;
+    top: 6%;
+    left: 3%;
+}
+
+.logo {
+    height: 1.7rem;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 1.3rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    80% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.btn {
+    display: inline-block;
+    padding: 1rem;
+    margin: 2rem;
+    text-decoration: none;
+    border: 1px solid cyan;
+    opacity: 0;
+    color: rgba(145, 214, 42, 0.822);
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+
+    transition-property: transform;
+    transition-duration: 3s;
+}
+
+@keyframes btn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.btn:hover {
+    transform: scale(1.2);
+}
+.btn-container {
+    text-align:center;
+}
