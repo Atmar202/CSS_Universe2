@@ -161,15 +161,15 @@ body {
     text-shadow: 0.5rem 1rem 2rem rgb(0,0,0,0.2);
 }
 
+.row {
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
 .row:after {
     content: "";
     display: table;
     clear: both;
-}
-
-.row {
-    max-width: 114rem;
-    margin: 0 auto;
 }
 
 .col-1-of-2 {
@@ -250,4 +250,48 @@ body {
 
 .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95);
+}
+
+.col-1-of-4 {
+    float: left;
+    width: 25%;
+    padding: 2rem;
+
+}
+
+.features {
+    padding: 5rem 0;
+    height: 65vh;
+    background-image: linear-gradient(to right bottom, var(--light-color), 
+    var(--dark-color)), url('../img/landscape.jpg');
+    background-size: cover;
+    background-position: bottom;
+    transform: skewY(-7deg);
+    margin-top: -5rem;
+}
+
+.features > * {
+    transform: skewY(7deg);
+}
+
+.feature-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--dark-color);
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.feature-box i {
+    font-size: 3rem;
+    background-image: linear-gradient(to right, var(--light-color), var(--dark-color));
+    background-clip: text;
+    color: transparent;
+}
+
+.feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03);
 }
